@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: hello-harness
-          image: <+artifacts.primary.image>
+          image: {{.Values.image}}
           ports: [{ containerPort: 8080 }]
           readinessProbe:
             httpGet: { path: /actuator/health, port: 8080 }
